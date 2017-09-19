@@ -3,16 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>caffe下如何合并两个lmdb数据库 | Littlecyj</title>
+    <title>caffe下如何合并两个lmdb数据库——方法1 | Littlecyj</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="caffe,lmdb">
+    <meta name="description" content="当使用caffe训练网络时，会常常遇到需要增加训练样本的情况，如果在训练数据本身特别大的情况下，重新生成lmdb数据库会非常耗时，因此需要采取方法将两个lmdb进行合并，经实测合并lmdb数据库的时间远远小于重新生成的时间。 合并两个lmdb数据库需要注意以下两个问题： 要考虑新插入的样本在数据库中分布均匀的问题。 要注意需要重构lmdb数据库的关键字  要解决第一个问题，需要计算两个lmdb数据">
+<meta name="keywords" content="caffe,lmdb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="caffe下如何合并两个lmdb数据库">
+<meta property="og:title" content="caffe下如何合并两个lmdb数据库——方法1">
 <meta property="og:url" content="http://yoursite.com/2017/09/16/caffe下如何合并两个lmdb数据库/index.html">
 <meta property="og:site_name" content="Littlecyj">
-<meta property="og:updated_time" content="2017-09-18T12:15:10.215Z">
+<meta property="og:description" content="当使用caffe训练网络时，会常常遇到需要增加训练样本的情况，如果在训练数据本身特别大的情况下，重新生成lmdb数据库会非常耗时，因此需要采取方法将两个lmdb进行合并，经实测合并lmdb数据库的时间远远小于重新生成的时间。 合并两个lmdb数据库需要注意以下两个问题： 要考虑新插入的样本在数据库中分布均匀的问题。 要注意需要重构lmdb数据库的关键字  要解决第一个问题，需要计算两个lmdb数据">
+<meta property="og:image" content="http://yoursite.com/img/00000001.jpg">
+<meta property="og:updated_time" content="2017-09-19T14:28:57.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="caffe下如何合并两个lmdb数据库">
+<meta name="twitter:title" content="caffe下如何合并两个lmdb数据库——方法1">
+<meta name="twitter:description" content="当使用caffe训练网络时，会常常遇到需要增加训练样本的情况，如果在训练数据本身特别大的情况下，重新生成lmdb数据库会非常耗时，因此需要采取方法将两个lmdb进行合并，经实测合并lmdb数据库的时间远远小于重新生成的时间。 合并两个lmdb数据库需要注意以下两个问题： 要考虑新插入的样本在数据库中分布均匀的问题。 要注意需要重构lmdb数据库的关键字  要解决第一个问题，需要计算两个lmdb数据">
+<meta name="twitter:image" content="http://yoursite.com/img/00000001.jpg">
     
 
     
@@ -53,15 +58,15 @@
             </a>
             <nav id="main-nav">
                 
-                    <a class="main-nav-link" href="/">Home</a>
+                    <a class="main-nav-link" href="/">首页</a>
                 
-                    <a class="main-nav-link" href="/archives">archives</a>
+                    <a class="main-nav-link" href="/archives">文章</a>
                 
-                    <a class="main-nav-link" href="/categories">categories</a>
+                    <a class="main-nav-link" href="/categories">目录</a>
                 
-                    <a class="main-nav-link" href="/tags">tags</a>
+                    <a class="main-nav-link" href="/tags">标签</a>
                 
-                    <a class="main-nav-link" href="/about">about</a>
+                    <a class="main-nav-link" href="/about">关于</a>
                 
             </nav>
             
@@ -108,15 +113,15 @@
         <table class="menu outer">
             <tr>
                 
-                    <td><a class="main-nav-link" href="/">Home</a></td>
+                    <td><a class="main-nav-link" href="/">首页</a></td>
                 
-                    <td><a class="main-nav-link" href="/archives">archives</a></td>
+                    <td><a class="main-nav-link" href="/archives">文章</a></td>
                 
-                    <td><a class="main-nav-link" href="/categories">categories</a></td>
+                    <td><a class="main-nav-link" href="/categories">目录</a></td>
                 
-                    <td><a class="main-nav-link" href="/tags">tags</a></td>
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
                 
-                    <td><a class="main-nav-link" href="/about">about</a></td>
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
                 
                 <td>
                     
@@ -140,7 +145,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            caffe下如何合并两个lmdb数据库
+            caffe下如何合并两个lmdb数据库——方法1
         </h1>
     
 
@@ -175,7 +180,15 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <p>当使用caffe训练网络时，会常常遇到需要增加训练样本的情况，如果在训练数据本身特别大的情况下，重新生成lmdb数据库会非常耗时，因此需要采取方法将两个lmdb进行合并，经实测合并lmdb数据库的时间远远小于重新生成的时间。</p>
+<h4 id="合并两个lmdb数据库需要注意以下两个问题："><a href="#合并两个lmdb数据库需要注意以下两个问题：" class="headerlink" title="合并两个lmdb数据库需要注意以下两个问题："></a>合并两个lmdb数据库需要注意以下两个问题：</h4><ul>
+<li>要考虑新插入的样本在数据库中分布均匀的问题。</li>
+<li>要注意需要重构lmdb数据库的关键字</li>
+</ul>
+<p>要解决第一个问题，需要计算两个lmdb数据库的大小也就是样本数量，然后按比例插入新的样本。其次就需要了解caffe中关键字的命名方式，如下图所示：<br><img src="/img/00000001.jpg" alt=""><br>从上图中可以看关键字的命名方式为：序号(样本数)+”_”+文件名。经过实测在lmdb数据库中数据是以序号进行排序（B+tree）的，因此需要对插入的样本的序号进行重构，否则会导致样本分布不均匀。<br><a id="more"></a><br>以下代码中，假设文件名命名方式为：categoriespath/00001.jpg,那么在lmdb中关键字为：00000001_categoriespath/00001.jpg</p>
+<h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#encoding:utf-8</span></div><div class="line"><span class="keyword">import</span> lmdb</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line">env_1 = lmdb.open(<span class="string">"lmdbpath1"</span>) </div><div class="line">env_2 = lmdb.open(<span class="string">"lmdbpath2"</span>) </div><div class="line"><span class="comment"># 创建事务</span></div><div class="line">txn_1 = env_1.begin()</div><div class="line">txn_2 = env_2.begin()</div><div class="line"><span class="comment"># 打开数据库</span></div><div class="line">database_1 = txn_1.cursor()</div><div class="line">database_2 = txn_2.cursor()</div><div class="line"><span class="comment">## 计算数据库中样本的数量</span></div><div class="line">first_key1 = database_1.first()</div><div class="line">start_index1 = int(database_1.item()[<span class="number">0</span>].split(<span class="string">"_"</span>)[<span class="number">0</span>]) </div><div class="line">last_key1 = database_1.last() </div><div class="line">last_index1 = int(database_1.item()[<span class="number">0</span>].split(<span class="string">"_"</span>)[<span class="number">0</span>]) </div><div class="line">db1_num = last_index1-start_index1 + <span class="number">1</span> <span class="comment"># 第一个lmdb数据库的样本数</span></div><div class="line">first_key2 = database_2.first()</div><div class="line">start_index2 = int(database_2.item()[<span class="number">0</span>].split(<span class="string">"_"</span>)[<span class="number">0</span>]) </div><div class="line">last_key2 = database_2.last() </div><div class="line">last_index2 = int(database_2.item()[<span class="number">0</span>].split(<span class="string">"_"</span>)[<span class="number">0</span>]) </div><div class="line">db2_num = last_index2-start_index2 + <span class="number">1</span> <span class="comment"># 第二个lmdb数据库的样本数</span></div><div class="line"><span class="comment"># 根据样本总数计算每隔多少个样本插入一个新样本</span></div><div class="line">gap_num = int((float(db1_num)/(db2_num+<span class="number">1</span>)) + <span class="number">1</span>) <span class="comment"># 不能保证要插入的数据库中所有样本都能插入到新的数据库中</span></div><div class="line"><span class="comment">## 将数据库各自cursor指针还原到最初位置。</span></div><div class="line">database_1 = txn_1.cursor()</div><div class="line">database_2 = txn_2.cursor()</div><div class="line">it = iter(database_2)</div><div class="line">it = database_2.iternext() <span class="comment"># 创建迭代器</span></div><div class="line">env_3 = lmdb.open(<span class="string">"lmdb_new_path3)"</span>, map_size=int(<span class="number">1e13</span>))  <span class="comment"># 新建一个数据库,大小设置为1e13，足够大。</span></div><div class="line">txn_3 = env_3.begin(write=<span class="keyword">True</span>) <span class="comment"># 可以写入</span></div><div class="line">count = <span class="number">0</span> </div><div class="line">flag = <span class="number">0</span></div><div class="line">current_index = <span class="number">0</span> <span class="comment"># 重构index索引</span></div><div class="line"><span class="keyword">for</span> (key, value) <span class="keyword">in</span> database_1:</div><div class="line">    <span class="comment"># 将数据放到结果数据库事务</span></div><div class="line">    key_list = key.split(<span class="string">"_"</span>)</div><div class="line">    key_list2 = key.split(<span class="string">"/"</span>)</div><div class="line">    key = str(current_index).zfill(<span class="number">8</span>) + <span class="string">"_"</span> + key_list[<span class="number">1</span>].split(<span class="string">"/"</span>)[<span class="number">0</span>] + <span class="string">"/"</span> + key_list2[<span class="number">1</span>] <span class="comment"># 重构关键字key</span></div><div class="line">    txn_3.put(key, value)</div><div class="line">    count += <span class="number">1</span></div><div class="line">    current_index += <span class="number">1</span></div><div class="line">    <span class="comment"># 得到当前index索引序号</span></div><div class="line">    <span class="comment"># 在原数据库中每隔gap_num个数据插入一个新样本，必须保证（db1_num/gap_num) &lt; db2_num ，不然会报错</span></div><div class="line">    <span class="keyword">if</span> (count%gap_num == <span class="number">0</span>):  </div><div class="line">        key2,value2 = it.next()</div><div class="line">        key2_list = key2.split(<span class="string">"_"</span>)</div><div class="line">        key2_list2 = key2.split(<span class="string">"/"</span>)</div><div class="line">        key2 = str(current_index).zfill(<span class="number">8</span>) + <span class="string">"_"</span> + key2_list[<span class="number">1</span>].split(<span class="string">"/"</span>)[<span class="number">0</span>] +<span class="string">"/"</span> +key2_list2[<span class="number">1</span>]</div><div class="line">        txn_3.put(key2,value2)</div><div class="line">        count = <span class="number">0</span></div><div class="line">        txn_3.commit() <span class="comment"># 样本提交数据库</span></div><div class="line">        txn_3 = env_3.begin(write=<span class="keyword">True</span>) </div><div class="line">        current_index += <span class="number">1</span> </div><div class="line"><span class="keyword">if</span>(count % gap_num != <span class="number">0</span>): <span class="comment"># 提交剩余的样本</span></div><div class="line">    txn_3.commit()</div><div class="line">    txn_3 = env_3.begin(write=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<p>上述方法为了保证插入样本在数据库中均匀分布需要对每一个样本的关键字进行重构那么还是需要花费一定的时间。<br>还有一种更快的合并lmdb数据库的方式，不需要对关键字进行重构，可以参考下一篇博客。</p>
+
         
         </div>
         <footer class="article-footer">
@@ -185,7 +198,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/09/16/caffe下如何合并两个lmdb数据库/" data-id="cj7q5wg3n0000astetatobl5d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2017/09/16/caffe下如何合并两个lmdb数据库/" data-id="cj7rq6fou0000c8tedozuhaau" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -291,7 +304,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/caffe/">caffe</a></p>
-                            <p class="item-title"><a href="/2017/09/16/caffe下如何合并两个lmdb数据库/" class="title">caffe下如何合并两个lmdb数据库</a></p>
+                            <p class="item-title"><a href="/2017/09/16/caffe下如何合并两个lmdb数据库/" class="title">caffe下如何合并两个lmdb数据库——方法1</a></p>
                             <p class="item-date"><time datetime="2017-09-16T15:36:37.000Z" itemprop="datePublished">2017-09-16</time></p>
                         </div>
                     </li>

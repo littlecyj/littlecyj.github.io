@@ -116,9 +116,9 @@ body,
   height: 100%;
 }
 body {
-  color: #565a5f;
-  background: #f5f8f9;
-  font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  color: #000;
+  background: #f5f5f5;
+  font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 a {
@@ -138,9 +138,9 @@ code {
   background-color: #f8f8f8;
 }
 .outer {
-  max-width: 1020px;
+  max-width: 1210px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 .outer:before,
 .outer:after {
@@ -185,16 +185,16 @@ code {
   #main {
     display: inline;
     float: left;
-    width: 68%;
-    margin: 0 1%;
+    width: 65.83333333333333%;
+    margin: 0 0.416666666666667%;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   #main {
     display: inline;
     float: left;
-    width: 57.99999999999999%;
-    margin: 0 1%;
+    width: 49.166666666666664%;
+    margin: 0 0.416666666666667%;
   }
 }
 @media screen and (min-width: 560px) and (max-width: 799px) {
@@ -387,7 +387,7 @@ code {
   display: inline-block;
 }
 .header-inner #logo .site-title {
-  font-size: 16px;
+  font-size: 25px;
   display: inline-block;
   vertical-align: top;
   font-weight: 600;
@@ -464,16 +464,16 @@ code {
 }
 .nav-icon {
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
   position: relative;
   cursor: pointer;
   height: 40px !important;
   line-height: 40px !important;
 }
 .main-nav-link {
-  font-weight: 300;
+  font-weight: 400;
 }
 @media screen and (min-width: 1200px) {
   #sub-nav {
@@ -566,7 +566,7 @@ code {
   line-height: 1.6em;
   outline: none !important;
   background: none !important;
-  font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   border: 1px solid #eceff2 !important;
 }
 .search-form-input:focus,
@@ -642,8 +642,8 @@ code {
 #profile {
   display: inline;
   float: left;
-  width: 28.000000000000004%;
-  margin: 0 1%;
+  width: 24.166666666666668%;
+  margin: 0 0.416666666666667%;
   display: none;
 }
 @media screen and (min-width: 1200px) {
@@ -672,7 +672,7 @@ code {
   font-weight: 600;
 }
 #profile .inner .base-info #location {
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 5px;
   color: #9a9ea3;
 }
@@ -717,11 +717,11 @@ code {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 22px;
 }
 #profile .inner .article-info .article-info-block span {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 #profile .inner .article-info .article-info-block:first-child {
@@ -732,7 +732,7 @@ code {
 }
 #profile .inner .social-links > table td {
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
 }
 #profile .inner .social-links > table td a {
   position: relative;
@@ -965,7 +965,7 @@ a.article-title:hover {
   position: static;
 }
 .article-entry blockquote footer {
-  font-size: 14px;
+  font-size: 16px;
   margin: 1.6em 0;
   font-family: "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
 }
@@ -1506,7 +1506,7 @@ ol.toc {
 .layout-wrap-inner.list-categories ul li,
 .layout-wrap-inner.list-categories ul .category-list-child {
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 16px;
   border-bottom: 1px solid border-color;
 }
 .layout-wrap-inner.list-categories ul li a,
@@ -1677,7 +1677,7 @@ ol.toc {
   padding: 20px 0;
   border-top: 1px solid #eceff2;
   color: #565a5f;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
 }
 #footer .outer {
@@ -1698,16 +1698,16 @@ ol.toc {
   #sidebar {
     display: inline;
     float: left;
-    width: 28.000000000000004%;
-    margin: 0 1%;
+    width: 32.5%;
+    margin: 0 0.416666666666667%;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   #sidebar {
     display: inline;
     float: left;
-    width: 38%;
-    margin: 0 1%;
+    width: 32.5%;
+    margin: 0 0.416666666666667%;
   }
 }
 .widget {
@@ -1796,7 +1796,7 @@ ol.toc {
 .widget ul .category-list-child,
 .widget ol .category-list-child {
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 16px;
   border-bottom: 1px solid border-color;
 }
 .widget ul li a,
@@ -2100,9 +2100,9 @@ ol.toc {
   display: block;
   overflow-x: auto;
   padding: 15px 20px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-  line-height: 22.400000000000002px;
+  line-height: 25.6px;
 }
 .highlight table {
   margin: 0;
